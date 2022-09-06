@@ -16,8 +16,11 @@ export const LeftBox = styled.div`
 `
 
 export const Menu = styled.div`
+    display:flex;
+    align-items:center;
     cursor: pointer;
-
+    height:100%;
+    padding: 8px;
     svg{
         color:#fff;
         width:24px;
@@ -26,6 +29,7 @@ export const Menu = styled.div`
 `
 
 export const TitleIcon = styled.div`
+    height:100%;
     display:flex;
     align-items:center;
     margin-right:2px;

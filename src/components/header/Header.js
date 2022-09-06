@@ -5,15 +5,16 @@ import { AiOutlineMenu, AiOutlineSearch } from 'react-icons/ai'
 import { HiOutlineDotsVertical,HiOutlineUserCircle } from 'react-icons/hi'
 
 
-const Header = () => {
+const Header = ({openSidebar}) => {
 
   const [focus, setFocus] = useState(false);
+
 
   return (
     <HeaderBox>
       <LeftBox>
         <Menu>
-          <AiOutlineMenu />
+          <AiOutlineMenu onClick={openSidebar}/>
         </Menu>
         <Title>
           <TitleIcon>
