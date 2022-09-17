@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Link } from "react-router-dom";
 
 export const SidebarBox = styled.div`
     width:${({ open }) => open ? "72px" : "240px"};
@@ -48,7 +49,7 @@ export const ItemBox = styled.div`
 
 `
 
-export const Item = styled.div`
+export const Item = styled(Link)`
 
     display:flex;
     flex-direction:${({ open }) => open ? "column" : ""};

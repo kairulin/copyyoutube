@@ -55,7 +55,7 @@ export const TitleAndUser = styled.div`
 `
 
 export const Title = styled.div`
-    color:#fff;
+    color:${({ theme }) => theme.text};
 `
 
 export const PostUser = styled.div`
@@ -66,4 +66,18 @@ export const PostUser = styled.div`
 export const WatchAndTime = styled.div`
     color:#aaa;
     font-size:12px;
+`
+
+export const SubPage = styled.div`
+    height:100vh;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    gap:50px;
+    svg{
+        font-size:80px;
+    }
 `

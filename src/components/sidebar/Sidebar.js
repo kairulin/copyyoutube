@@ -16,21 +16,25 @@ const sidebarItem = [
             {
                 icon: <AiOutlineHome />,
                 fillicon: <AiFillHome />,
+                to:"/",
                 name: '首頁'
             },
             {
                 icon: <AiOutlineCompass />,
                 fillicon: <AiFillCompass />,
+                to:"/",
                 name: '探索'
             },
             {
                 icon: <AiOutlineVideoCamera />,
                 fillicon: <AiFillVideoCamera />,
+                to:"/",
                 name: 'Shorts'
             },
             {
                 icon: <MdOutlineSubscriptions />,
                 fillicon: <MdSubscriptions />,
+                to:"/sub",
                 name: '訂閱內容'
             },
         ]
@@ -40,11 +44,13 @@ const sidebarItem = [
             {
                 icon: < MdOutlineVideoLibrary />,
                 fillicon: < MdVideoLibrary />,
+                to:"/",
                 name: '媒體庫'
             },
             {
                 icon: <MdOutlineRestore />,
                 fillicon: <MdOutlineSettingsBackupRestore />,
+                to:"/",
                 name: '觀看紀錄'
             },
         ]
@@ -62,7 +68,7 @@ const Sidebar = ({toggleState}) => {
             {sidebarItem.map((itms, idex) => (
                 <ItemBox key={idex} onClick={() => setIdxA(idex)} open={toggleState}>
                     {itms.items.map((itm, index) =>
-                        <Item key={index} onClick={() => setIdxB(index)} style={{ background: `${idxA === idex ? idxB === index ? theme=== 'light' ? 'rgba(0,0,0,0.2)' : 'rgba(255,255,255,0.2)' : '' : ''}` }} open={toggleState}>
+                        <Item to={itm.to} key={index} onClick={() => setIdxB(index)} style={{ background: `${idxA === idex ? idxB === index ? theme=== 'light' ? 'rgba(0,0,0,0.2)' : 'rgba(255,255,255,0.2)' : '' : ''}` }} open={toggleState}>
                             <ItemIcon>
                                 {idxA === idex ? idxB === index ? itm.fillicon : itm.icon : itm.icon}
                             </ItemIcon>

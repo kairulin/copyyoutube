@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Link } from "react-router-dom";
 
 export const MobileSidebar = styled.div`
     position: fixed;
@@ -96,7 +97,7 @@ export const ItemBox = styled.div`
 
 `
 
-export const Item = styled.div`
+export const Item = styled(Link)`
 
     display:flex;
 
