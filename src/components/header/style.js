@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 
 export const HeaderBox = styled.div`
@@ -43,7 +44,7 @@ export const TitleIcon = styled.div`
     }
 `
 
-export const Title = styled.div`
+export const Title = styled(Link)`
     padding:18px 14px 18px 16px;
     display:flex;
     font-weight:700;

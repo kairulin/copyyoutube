@@ -18,7 +18,7 @@ const Header = ({openSidebar,openMenu}) => {
         <Menu>
           <AiOutlineMenu onClick={openSidebar} />
         </Menu>
-        <Title>
+        <Title to="/">
           <TitleIcon>
             <IoLogoYoutube />
           </TitleIcon>
