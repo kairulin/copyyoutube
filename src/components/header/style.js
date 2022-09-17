@@ -56,28 +56,49 @@ export const InputBox = styled.div`
     width:33%;
     display:flex;
     align-items:center;
+    @media screen and (max-width: 650px) {
+        display:flex;
+        justify-content:end;     
+    }
 
+    @media screen and (max-width: 550px) {
+        display:flex;
+        justify-content:center;  
+    }
+
+    @media screen and (max-width: 450px) {
+        display:flex;
+        justify-content:start;  
+    }
 `
 export const InputAndIcon = styled.div`
     display:flex;
     justify-content:center;
     align-items:center;
     height:40px;
-    width:${({hasFocus}) => (hasFocus ? 'calc(100% - 40px)' : '525.48px')};
+    width:${({ hasFocus }) => (hasFocus ? 'calc(100% - 40px)' : '525.48px')};
     background:hsl(0,0%,7%);
-    margin-left:${({hasFocus}) => (hasFocus ? '0px' : '40px')};
-    border:${({hasFocus}) => (hasFocus ? '1px solid #1c62b9' : '1px solid hsl(0,0%,18.82%)')};
+    margin-left:${({ hasFocus }) => (hasFocus ? '0px' : '40px')};
+    border:${({ hasFocus }) => (hasFocus ? '1px solid #1c62b9' : '1px solid hsl(0,0%,18.82%)')};
     padding:2px 6px;
+
+
+    @media screen and (max-width: 650px) {
+        display:none;
+  
+    }
 `
 
 export const InputIcon = styled.div`
-    display:${({hasFocus}) => (hasFocus ? 'flex' : 'none')};
+    display:${({ hasFocus }) => (hasFocus ? 'flex' : 'none')};
     justify-content:center;
     align-items:center;
     height:40px;
     width:40px;
     color:#fff;
-    opacity: ${({hasFocus}) => (hasFocus ? '1' : '0')};
+    opacity: ${({ hasFocus }) => (hasFocus ? '1' : '0')};  
+   
+      
 `
 
 export const Input = styled.input`
@@ -90,6 +111,7 @@ export const Input = styled.input`
     &::placeholder{
         font-size:16px;
     }
+   
 `
 
 export const Search = styled.div`
@@ -106,6 +128,98 @@ export const Search = styled.div`
         color:#fff;
         font-size:26px;
     }
+
+    @media screen and (max-width: 650px) {
+        background:inherit;        
+    }
+
+   
+`
+export const MobileInputBox = styled.div`
+    display:none;
+    @media screen and (max-width: 650px) {
+        display: ${({mobile})=> mobile ? 'none' : 'flex'};
+        /* display:flex; */
+        width:100%;
+        height:56px;        
+        background:rgb(37,37,37);
+        position:absolute;
+        align-items:center;
+        padding:0 36px 0 0;
+    }
+`
+export const MobileBackIcon = styled.div`
+    @media screen and (max-width: 650px) {
+        svg{
+        cursor: pointer;
+        width:24px;
+        height:24px;
+        color:#fff;
+        margin-right:15px;
+        }
+    }
+   
+`
+
+export const MobileInput = styled.input`
+    @media screen and (max-width: 650px) {
+        height:26px;
+        width:100%;
+        border:none;
+        background:hsl(0,0%,7%);
+        outline:none;
+        color:white;
+        &::placeholder{
+            font-size:16px;
+        }
+    }
+`
+export const MobileInputAndIcon = styled.div`
+    @media screen and (max-width: 650px) {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:40px;
+        width:${({ hasFocus }) => (hasFocus ? 'calc(100% - 40px)' : '525.48px')};
+        background:hsl(0,0%,7%);
+        margin-left:${({ hasFocus }) => (hasFocus ? '0px' : '40px')};
+        border:${({ hasFocus }) => (hasFocus ? '1px solid #1c62b9' : '1px solid hsl(0,0%,18.82%)')};
+        padding:2px 6px; 
+        
+    }
+`
+
+export const MobileInputIcon = styled.div`
+    @media screen and (max-width: 650px) {
+         display:${({ hasFocus }) => (hasFocus ? 'flex' : 'none')};
+         /* display:flex; */
+
+        justify-content:center;
+        align-items:center;
+        height:40px;
+        width:40px;
+        color:#fff;
+        opacity: ${({ hasFocus }) => (hasFocus ? '1' : '0')};
+        /* opacity: 1; */
+
+    } 
+`
+
+export const MobileSearch = styled.div`
+    @media screen and (max-width: 650px) {
+        cursor: pointer;
+        width:64px;
+        height:40px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:hsla(0,0%,100%,0.08);
+        border:hsl(0,0%,18.82%);
+        svg{
+            color:#fff;
+            font-size:26px;
+        }      
+    }
 `
 
 export const RightBox = styled.div`
@@ -115,6 +229,7 @@ export const RightBox = styled.div`
     align-items:center;
     justify-content:flex-end;
     gap:25px;
+
 `
 
 export const Setting = styled.div`
@@ -137,6 +252,7 @@ export const Login = styled.div`
     align-items:center;
     gap:5px;
     color:#3ea6ff;
+    white-space:nowrap;
     svg{
         font-size:22px;
     }

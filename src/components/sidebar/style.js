@@ -10,6 +10,10 @@ export const SidebarBox = styled.div`
         width:72px;
         padding-right:0;
     }
+    @media screen and (max-width: 800px) {
+        display:none;
+        
+    }
 `
 
 export const ItemBox = styled.div`

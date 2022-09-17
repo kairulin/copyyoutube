@@ -15,6 +15,15 @@ export const ContainerBox = styled.div`
         grid-template-columns:repeat(3, 1fr);
         
     }
+    @media screen and (max-width: 880px) {
+        grid-template-columns:repeat(2, 1fr);
+        
+    }
+
+    @media screen and (max-width: 500px) {
+        grid-template-columns:repeat(1, 1fr);
+        
+    }
 `
 export const VideoBox = styled.div`
 
