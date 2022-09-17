@@ -28,7 +28,7 @@ export const Top = styled.div`
     display:flex;
     align-items:center;
     padding:0 16px;
-    background: rgba(33,33,33,1);
+    background: ${({ theme }) => theme.bg1};
     height:56px;
 
 `
@@ -40,7 +40,7 @@ export const Menu = styled.div`
     height:100%;
     padding: 8px;
     svg{
-        color:#fff;
+        color:${({ theme }) => theme.text};
         width:24px;
         height:24px;
     }
@@ -63,7 +63,7 @@ export const Title = styled.div`
     display:flex;
     font-weight:700;
     height:100%;
-    color:#fff;
+    color:${({ theme }) => theme.text};
     align-self: center;
     text-align:center;
     cursor: pointer;
@@ -73,7 +73,7 @@ export const Title = styled.div`
 export const SidebarBox = styled.div`
     width:240px;
     height:calc(100vh - 56px);
-    background: rgba(33,33,33,1);
+    background: ${({ theme }) => theme.bg1};
     padding-right: 15px;  
     
 `
@@ -103,7 +103,7 @@ export const Item = styled.div`
     white-space: nowrap;
     align-items: center;
     gap:25px;
-    color: #fff;
+    color: ${({ theme }) => theme.text};
     height:40px;
 
     

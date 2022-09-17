@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     display:flex;
-    background:#181818;
+    background:${({ theme }) => theme.bg2};
 `
 
 export const ContainerBox = styled.div`

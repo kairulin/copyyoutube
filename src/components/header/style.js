@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const HeaderBox = styled.div`
     width:100%;
     height:56px;
@@ -7,7 +8,9 @@ export const HeaderBox = styled.div`
     justify-content:space-between;
     padding:0 16px;
     align-items:center;
-    background:rgba(33,33,33,0.98);
+    /* background:rgba(33,33,33,0.98); */
+    background:${({ theme }) => theme.bg1};
+
 `
 export const LeftBox = styled.div` 
     height:100%;
@@ -22,7 +25,7 @@ export const Menu = styled.div`
     height:100%;
     padding: 8px;
     svg{
-        color:#fff;
+        color:${({ theme }) => theme.text};
         width:24px;
         height:24px;
     }
@@ -45,7 +48,7 @@ export const Title = styled.div`
     display:flex;
     font-weight:700;
     height:100%;
-    color:#fff;
+    color:${({ theme }) => theme.text};
     align-self: center;
     text-align:center;
     cursor: pointer;
@@ -77,7 +80,8 @@ export const InputAndIcon = styled.div`
     justify-content: end;
     align-items:center;
     height:40px;
-    background:${({ hasFocus }) => (hasFocus ? 'hsl(0,0%,7%)' : 'transparent')};
+    
+    background:${({ hasFocus }) => (hasFocus ? (({ theme }) => theme.bg2) : 'transparent')};
     width:500px;
     border:${({ hasFocus }) => (hasFocus ? '1px solid #1c62b9' : 'none')};
 
@@ -101,14 +105,14 @@ export const InputAndIcon = styled.div`
 export const InputSite = styled.div`
     width:460px;
     height:40px;
-    background:hsl(0,0%,7%);
+    background:${({ theme }) => theme.bg2};
     display:flex;
     justify-content: end;
     align-items:center;
-    border:${({ hasFocus }) => (hasFocus ? 'none' : '1px solid hsl(0,0%,18.82%)')};
-    border-left:${({ hasFocus }) => (hasFocus ? 'none' : '1px solid hsl(0,0%,18.82%)')};
-    border-top:${({ hasFocus }) => (hasFocus ? 'inherit' : '1px solid hsl(0,0%,18.82%)')};
-    border-bottom:${({ hasFocus }) => (hasFocus ? 'inherit' : '1px solid hsl(0,0%,18.82%)')};
+    border:${({ hasFocus }) => (hasFocus ? 'none' : (({ theme }) => theme.border))};
+    border-left:${({ hasFocus }) => (hasFocus ? 'none' : (({ theme }) => theme.border))};
+    border-top:${({ hasFocus }) => (hasFocus ? 'inherit' : (({ theme }) => theme.border))};
+    border-bottom:${({ hasFocus }) => (hasFocus ? 'inherit' : (({ theme }) => theme.border))};
 
     @media screen and (max-width: 920px) {
         width:360px;
@@ -130,7 +134,7 @@ export const InputIcon = styled.div`
     align-items:center;
     height:40px;
     width:40px;
-    color:#fff;
+    color:${({ theme }) => theme.text};
     position: relative;
     left:2px;
 
@@ -142,9 +146,9 @@ export const Input = styled.input`
 
     width:460px;
     border:none;
-    background:hsl(0,0%,7%);
+    background:${({ theme }) => theme.bg2};
     outline:none;
-    color:white;
+    color:${({ theme }) => theme.text};
     padding:2px 6px;
 
     &::placeholder{
@@ -159,7 +163,7 @@ export const Input = styled.input`
     }
 
     @media screen and (max-width: 750px) {
-        width:170px;
+        width:160px;
     }
    
 `
@@ -172,15 +176,16 @@ export const Search = styled.div`
     display:flex;
     justify-content:center;
     align-items:center;
-    background:hsla(0,0%,100%,0.08);
-    border:hsl(0,0%,18.82%);
+    background:${({ theme }) => theme.searchicon};
+    border:${({ theme }) => theme.border};
     svg{
-        color:#fff;
+        color:${({ theme }) => theme.text};
         font-size:26px;
     }
 
     @media screen and (max-width: 650px) {
         background:inherit;        
+        border:none;
     }
 
    
@@ -188,10 +193,10 @@ export const Search = styled.div`
 export const MobileInputBox = styled.div`
     display:none;
     @media screen and (max-width: 650px) {
-        display: ${({mobile})=> mobile ? 'none' : 'flex'};
+        display: ${({ mobile }) => mobile ? 'none' : 'flex'};
         width:100%;
         height:56px;        
-        background:rgb(37,37,37);
+        background:${({ theme }) => theme.bg1};
         position:absolute;
         top:0;
         left:0;
@@ -215,7 +220,7 @@ export const MobileBackIcon = styled.div`
         cursor: pointer;
         width:24px;
         height:24px;
-        color:#fff;
+        color:${({ theme }) => theme.text};
         margin-right:15px;
         }
     }
@@ -227,7 +232,7 @@ export const MobileInput = styled.input`
         height:26px;
         width:100%;
         border:none;
-        background:hsl(0,0%,7%);
+        background:${({ theme }) => theme.bg2};
         outline:none;
         color:white;
         padding:2px 6px; 
@@ -244,7 +249,7 @@ export const MobileInputAndIcon = styled.div`
         align-items:center;
         height:40px;    
         width:360px;
-        background:${({ hasFocus }) => (hasFocus ? 'hsl(0,0%,7%)' : 'transparent')};
+        background:${({ hasFocus }) => (hasFocus ? `${({ theme }) => theme.searchbg}` : 'transparent')};
         border:${({ hasFocus }) => (hasFocus ? '1px solid #1c62b9' : 'none')};
         
         @media screen and (max-width: 550px) {
@@ -262,7 +267,8 @@ export const MobileInputSite = styled.div`
   @media screen and (max-width: 650px) {
     width:320px;
     height:40px;
-    background:hsl(0,0%,7%);
+    background:${({ theme }) => theme.bg2};
+;
     display:flex;
     justify-content: end;
     align-items:center;
@@ -288,7 +294,8 @@ export const MobileInputIcon = styled.div`
         align-items:center;
         height:40px;
         width:40px;
-        color:#fff;      
+        color:${({ theme }) => theme.text};
+
     } 
 `
 
@@ -300,10 +307,11 @@ export const MobileSearch = styled.div`
         display:flex;
         justify-content:center;
         align-items:center;
-        background:hsla(0,0%,100%,0.08);
-        border:hsl(0,0%,18.82%);
+        background:${({ theme }) => theme.searchicon};
+        border:${({ theme }) => theme.border};
         svg{
-            color:#fff;
+            color:${({ theme }) => theme.text};
+
             font-size:26px;
         }      
     }
@@ -323,7 +331,7 @@ export const Setting = styled.div`
     cursor: pointer;
 
     svg{
-        color:#fff;
+        color:${({ theme }) => theme.text};
         font-size:20px;
     }
 `

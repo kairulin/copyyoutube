@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const SidebarBox = styled.div`
     width:${({ open }) => open ? "72px" : "240px"};
     height:calc(100vh - 56px);
-    background:rgba(33,33,33,0.98);
+    background:${({ theme }) => theme.bg1};
     padding-right: ${({ open }) => open ? "" : "15px"};
 
     @media screen and (max-width: 1300px) {
@@ -20,7 +20,7 @@ export const ItemBox = styled.div`
     display:flex;
     flex-direction:column;
 
-    border-bottom: ${({ open }) => open ? "none" : "1px solid rgba(255,255,255,0.1)"};
+    border-bottom: ${({ open }) => open ? "none" : (({ theme }) => theme.borderbottom)};
     &:first-child{
         padding:${({ open }) => open ? "" : "12px 0"};
         
@@ -55,7 +55,7 @@ export const Item = styled.div`
     white-space: nowrap;
     align-items: center;
     gap:${({ open }) => open ? "" : "25px"};
-    color: #fff;
+    color: ${({ theme }) => theme.text};
     height:${({ open }) => open ? "74px" : "40px"};
 
     
@@ -63,11 +63,11 @@ export const Item = styled.div`
     cursor: pointer;
 
     &:hover{
-        background:rgba(255,255,255,0.1);
+        background:${({ theme }) => theme.hover};
     }
 
     &.active{
-        background:rgba(255,255,255,0.1);
+        background:${({ theme }) => theme.hover};
     }    
 
     @media screen and (max-width: 1300px) {

@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext,useState } from 'react'
 import { BackgroundBlack, Item, ItemBox, ItemIcon, ItemName, Menu, MobileSidebar, SidebarBox, Title, TitleIcon, Top } from './style'
 import { MdSubscriptions, MdOutlineSubscriptions, MdVideoLibrary, MdOutlineVideoLibrary, MdOutlineRestore, MdOutlineSettingsBackupRestore } from 'react-icons/md'
 import { HiOutlineUserCircle } from 'react-icons/hi'
 import { AiOutlineMenu, AiFillHome, AiOutlineHome, AiFillVideoCamera, AiOutlineVideoCamera, AiFillCompass, AiOutlineCompass } from 'react-icons/ai'
 import { Login } from '../../header/style'
 import { IoLogoYoutube } from 'react-icons/io'
+
+import { ThemeContext } from '../../../App'
 
 
 const sidebarItem = [
@@ -52,6 +54,7 @@ const MSidebar = ({ openSidebar, toggleState }) => {
     const [idxA, setIdxA] = useState(0)
     const [idxB, setIdxB] = useState(0)
 
+    const { theme } = useContext(ThemeContext)
 
 
     return (
@@ -84,7 +87,7 @@ const MSidebar = ({ openSidebar, toggleState }) => {
                             )}
                         </ItemBox>
                     ))}
-                    <ItemBox style={{ color: "#fff", padding: "16px 24px 16px 32px", fontSize: "14px", lineHeight: "20px", fontWeight: "400", gap: "10px" }}>
+                    <ItemBox style={{ color: theme==='light' ? "#111" :"#fff", padding: "16px 24px 16px 32px", fontSize: "14px", lineHeight: "20px", fontWeight: "400", gap: "10px" }}>
                         登入帳號即可對影片表示喜歡、發布留言及訂閱頻道。
                         <Login>
                             <HiOutlineUserCircle />

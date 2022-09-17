@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Header from '../components/header/Header'
+import Menu from '../components/menu/Menu';
 import MSidebar from '../components/mobile/sidebar/MSidebar';
 import Sidebar from '../components/sidebar/Sidebar'
 import { CircleAndTitle, CircleImg, Container, ContainerBox, PostUser, Title, TitleAndUser, VideoBox, VideoImg, WatchAndTime } from './style';
@@ -62,9 +63,14 @@ const Main = () => {
     setToggle(!toggle)
   }
 
+  const [menu,setMenu] = useState(false);
+  const menuBtn = () => {
+    setMenu(!menu)
+  }
   return (
     <>
-      <Header openSidebar={sidebarBtn} />
+      <Header openSidebar={sidebarBtn} openMenu={menuBtn}/>
+      <Menu  showMenu={menu}/>
       <Container>
         <Sidebar toggleState={toggle} />
         <MSidebar openSidebar={sidebarBtn} toggleState={toggle} />

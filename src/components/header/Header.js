@@ -5,7 +5,7 @@ import { AiOutlineMenu, AiOutlineSearch,AiOutlineArrowLeft } from 'react-icons/a
 import { HiOutlineDotsVertical,HiOutlineUserCircle } from 'react-icons/hi'
 
 
-const Header = ({openSidebar}) => {
+const Header = ({openSidebar,openMenu}) => {
 
   const [focus, setFocus] = useState(false);
   const [mobilFocus, setMobilFocus] = useState(false);
@@ -43,13 +43,18 @@ const Header = ({openSidebar}) => {
       </InputBox>
       <RightBox>
         <Setting>
-          <HiOutlineDotsVertical />
+          <HiOutlineDotsVertical onClick={openMenu}/>
         </Setting>
         <Login >
           <HiOutlineUserCircle/>
           登入
         </Login>
       </RightBox>
+
+
+
+
+
 
       <MobileInputBox mobile={mobile}>
         <MobileBackIcon>
@@ -65,7 +70,6 @@ const Header = ({openSidebar}) => {
 
             <MobileInputSite hasFocus={mobilFocus}>
               <MobileInput placeholder='搜尋' onFocus={() => setMobilFocus(true)} onBlur={() => setMobilFocus(false)} />
-
             </MobileInputSite>
           </MobileInputAndIcon>
         
