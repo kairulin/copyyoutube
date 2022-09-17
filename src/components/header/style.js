@@ -53,10 +53,11 @@ export const Title = styled.div`
 
 export const InputBox = styled.div`
     height:100%;
-    width:33%;
+
     display:flex;
     align-items:center;
     @media screen and (max-width: 650px) {
+        width: 40%;
         display:flex;
         justify-content:end;     
     }
@@ -73,43 +74,92 @@ export const InputBox = styled.div`
 `
 export const InputAndIcon = styled.div`
     display:flex;
-    justify-content:center;
+    justify-content: end;
     align-items:center;
     height:40px;
-    width:${({ hasFocus }) => (hasFocus ? 'calc(100% - 40px)' : '525.48px')};
-    background:hsl(0,0%,7%);
-    margin-left:${({ hasFocus }) => (hasFocus ? '0px' : '40px')};
-    border:${({ hasFocus }) => (hasFocus ? '1px solid #1c62b9' : '1px solid hsl(0,0%,18.82%)')};
-    padding:2px 6px;
+    background:${({ hasFocus }) => (hasFocus ? 'hsl(0,0%,7%)' : 'transparent')};
+    width:500px;
+    border:${({ hasFocus }) => (hasFocus ? '1px solid #1c62b9' : 'none')};
 
+    @media screen and (max-width: 920px) {
+        width:400px;
+    }
+
+    @media screen and (max-width: 840px) {
+        width:300px;
+    }
+
+    @media screen and (max-width: 750px) {
+        width:210px;
+    }
 
     @media screen and (max-width: 650px) {
         display:none;
   
     }
 `
+export const InputSite = styled.div`
+    width:460px;
+    height:40px;
+    background:hsl(0,0%,7%);
+    display:flex;
+    justify-content: end;
+    align-items:center;
+    border:${({ hasFocus }) => (hasFocus ? 'none' : '1px solid hsl(0,0%,18.82%)')};
+    border-left:${({ hasFocus }) => (hasFocus ? 'none' : '1px solid hsl(0,0%,18.82%)')};
+    border-top:${({ hasFocus }) => (hasFocus ? 'inherit' : '1px solid hsl(0,0%,18.82%)')};
+    border-bottom:${({ hasFocus }) => (hasFocus ? 'inherit' : '1px solid hsl(0,0%,18.82%)')};
+
+    @media screen and (max-width: 920px) {
+        width:360px;
+    }
+    @media screen and (max-width: 840px) {
+        width:260px;
+    }
+
+    @media screen and (max-width: 750px) {
+        width:170px;
+    }
+`
+
 
 export const InputIcon = styled.div`
     display:${({ hasFocus }) => (hasFocus ? 'flex' : 'none')};
+
     justify-content:center;
     align-items:center;
     height:40px;
     width:40px;
     color:#fff;
-    opacity: ${({ hasFocus }) => (hasFocus ? '1' : '0')};  
-   
+    position: relative;
+    left:2px;
+
       
 `
 
 export const Input = styled.input`
     height:26px;
-    width:100%;
+
+    width:460px;
     border:none;
     background:hsl(0,0%,7%);
     outline:none;
     color:white;
+    padding:2px 6px;
+
     &::placeholder{
         font-size:16px;
+    }
+
+    @media screen and (max-width: 920px) {
+        width:360px;
+    }
+    @media screen and (max-width: 840px) {
+        width:260px;
+    }
+
+    @media screen and (max-width: 750px) {
+        width:170px;
     }
    
 `
@@ -139,15 +189,26 @@ export const MobileInputBox = styled.div`
     display:none;
     @media screen and (max-width: 650px) {
         display: ${({mobile})=> mobile ? 'none' : 'flex'};
-        /* display:flex; */
         width:100%;
         height:56px;        
         background:rgb(37,37,37);
         position:absolute;
+        top:0;
+        left:0;
         align-items:center;
-        padding:0 36px 0 0;
+        padding:0 16px 0 16px;
+        gap:30px;
+        @media screen and (max-width: 390px) {
+            gap:5px;        
+        }
     }
 `
+export const MobileBox = styled.div`
+    display:flex;    
+`
+
+
+
 export const MobileBackIcon = styled.div`
     @media screen and (max-width: 650px) {
         svg{
@@ -169,6 +230,8 @@ export const MobileInput = styled.input`
         background:hsl(0,0%,7%);
         outline:none;
         color:white;
+        padding:2px 6px; 
+
         &::placeholder{
             font-size:16px;
         }
@@ -177,31 +240,55 @@ export const MobileInput = styled.input`
 export const MobileInputAndIcon = styled.div`
     @media screen and (max-width: 650px) {
         display:flex;
-        justify-content:center;
+        justify-content:end;
         align-items:center;
-        height:40px;
-        width:${({ hasFocus }) => (hasFocus ? 'calc(100% - 40px)' : '525.48px')};
-        background:hsl(0,0%,7%);
-        margin-left:${({ hasFocus }) => (hasFocus ? '0px' : '40px')};
-        border:${({ hasFocus }) => (hasFocus ? '1px solid #1c62b9' : '1px solid hsl(0,0%,18.82%)')};
-        padding:2px 6px; 
+        height:40px;    
+        width:360px;
+        background:${({ hasFocus }) => (hasFocus ? 'hsl(0,0%,7%)' : 'transparent')};
+        border:${({ hasFocus }) => (hasFocus ? '1px solid #1c62b9' : 'none')};
         
+        @media screen and (max-width: 550px) {
+            width:300px;            
+        }
+        @media screen and (max-width: 480px) {
+            width:240px;            
+        }
+        @media screen and (max-width: 390px) {
+            width:160px;            
+        }
     }
 `
-
+export const MobileInputSite = styled.div`
+  @media screen and (max-width: 650px) {
+    width:320px;
+    height:40px;
+    background:hsl(0,0%,7%);
+    display:flex;
+    justify-content: end;
+    align-items:center;
+    border:${({ hasFocus }) => (hasFocus ? 'none' : '1px solid hsl(0,0%,18.82%)')};
+    border-left:${({ hasFocus }) => (hasFocus ? 'none' : '1px solid hsl(0,0%,18.82%)')};
+    border-top:${({ hasFocus }) => (hasFocus ? 'inherit' : '1px solid hsl(0,0%,18.82%)')};
+    border-bottom:${({ hasFocus }) => (hasFocus ? 'inherit' : '1px solid hsl(0,0%,18.82%)')};
+    @media screen and (max-width: 550px) {
+            width:260px;            
+        }
+    @media screen and (max-width: 480px) {
+        width:200px;            
+    }
+    @media screen and (max-width: 390px) {
+        width:120px;            
+    }
+  }
+`
 export const MobileInputIcon = styled.div`
     @media screen and (max-width: 650px) {
-         display:${({ hasFocus }) => (hasFocus ? 'flex' : 'none')};
-         /* display:flex; */
-
+        display:${({ hasFocus }) => (hasFocus ? 'flex' : 'none')};
         justify-content:center;
         align-items:center;
         height:40px;
         width:40px;
-        color:#fff;
-        opacity: ${({ hasFocus }) => (hasFocus ? '1' : '0')};
-        /* opacity: 1; */
-
+        color:#fff;      
     } 
 `
 

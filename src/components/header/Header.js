@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { HeaderBox, Input, InputAndIcon, InputBox, InputIcon, LeftBox, Login, Menu, MobileBackIcon, MobileInput, MobileInputAndIcon, MobileInputBox, MobileInputIcon, MobileSearch, RightBox, Search, Setting, Title, TitleIcon } from './style'
+import { HeaderBox, Input, InputAndIcon, InputBox, InputIcon, LeftBox, Login, Menu, MobileBackIcon, MobileInput, MobileInputAndIcon, MobileInputBox, MobileInputIcon, MobileSearch, RightBox, Search, Setting, InputSite, Title, TitleIcon, MobileInputSite, MobileBox } from './style'
 import { IoLogoYoutube } from 'react-icons/io'
 import { AiOutlineMenu, AiOutlineSearch,AiOutlineArrowLeft } from 'react-icons/ai'
 import { HiOutlineDotsVertical,HiOutlineUserCircle } from 'react-icons/hi'
@@ -28,10 +28,14 @@ const Header = ({openSidebar}) => {
       </LeftBox>
       <InputBox onClick={() => setMobile(!mobile)}>
         <InputAndIcon hasFocus={focus}>
-          <InputIcon hasFocus={focus}>
+        <InputIcon hasFocus={focus}>
             <AiOutlineSearch />
           </InputIcon>
+          <InputSite hasFocus={focus}>
+        
           <Input placeholder='搜尋' onFocus={() => setFocus(true)} onBlur={() => setFocus(false)} />
+          </InputSite>
+        
         </InputAndIcon>        
         <Search>
           <AiOutlineSearch />
@@ -51,16 +55,26 @@ const Header = ({openSidebar}) => {
         <MobileBackIcon>
           <AiOutlineArrowLeft onClick={() => setMobile(!mobile)} />
         </MobileBackIcon>
-        <MobileInputAndIcon hasFocus={mobilFocus}>
-          <MobileInputIcon hasFocus={mobilFocus}>
-            <AiOutlineSearch />
-          </MobileInputIcon>
-          <MobileInput onFocus={() => setMobilFocus(true)} onBlur={() => setMobilFocus(false)} />
-        </MobileInputAndIcon>
-       
-        <MobileSearch>
-            <AiOutlineSearch />
-          </MobileSearch>
+
+        <MobileBox>
+
+          <MobileInputAndIcon hasFocus={mobilFocus}>
+            <MobileInputIcon hasFocus={mobilFocus}>
+              <AiOutlineSearch />
+            </MobileInputIcon>
+
+            <MobileInputSite hasFocus={mobilFocus}>
+              <MobileInput placeholder='搜尋' onFocus={() => setMobilFocus(true)} onBlur={() => setMobilFocus(false)} />
+
+            </MobileInputSite>
+          </MobileInputAndIcon>
+        
+            <MobileSearch>
+              <AiOutlineSearch />
+            </MobileSearch>
+
+        </MobileBox>
+        
       </MobileInputBox>
 
     </HeaderBox>
